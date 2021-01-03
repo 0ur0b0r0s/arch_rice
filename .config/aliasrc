@@ -1,0 +1,18 @@
+#!/bin/sh
+
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+alias \
+    l="ls -la" \
+    ll="ls -l" \
+    lss="~/.scripts/lss.sh" \
+    ..="cd .." \
+    ac="vim $0" \
+    zc="vim ~/.zshrc" \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	sdn="sudo shutdown -h now" \
+	sp="sudo pacman" \
+    yay="yaourt" \
+    kdwm="killall dwm" \
