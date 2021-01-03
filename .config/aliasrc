@@ -1,7 +1,5 @@
 #!/bin/sh
 
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
-
 alias \
     l="ls -la" \
     ll="ls -l" \
@@ -16,3 +14,4 @@ alias \
 	sp="sudo pacman" \
     yay="yaourt" \
     kdwm="killall dwm" \
+    vim="~/.scripts/nvr.sh" 
