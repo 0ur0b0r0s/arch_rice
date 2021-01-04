@@ -1,0 +1,68 @@
+# start a terminal
+super + Return
+        st 
+
+#launch spotify
+super + s 
+    spotify
+
+#lauch psafe API
+super + p
+    bash ~/Tools/psafe/psafe.sh
+
+#choose keyboard layout
+super + control + k 
+    bash ~/.scripts/keyboardSelect.sh
+
+#choose screen layout
+super + control + s
+    bash ~/.scripts/screen.sh
+
+# start dmenu (a program launcher)
+super + d 
+    dmenu_run
+
+super + shift + c
+    clipmenu
+
+#check reups
+super + r 
+   ~/Tools/url_checker/url_check.sh
+
+# start qutebrowser
+super + q 
+   qutebrowser
+
+#start google-chrome
+super + g 
+   google-chrome-stable
+
+super + a 
+   ~/.scripts/dmenu_freenom.sh
+
+super + F11 
+    amixer set Master 5%+ && refb
+
+super + F10 
+    amixer set Master 5%- && refb
+
+super + F6
+    playerctl previous && sleep 0.1s && refb
+
+super + F7
+    playerctl {play,pause}
+
+super + F8
+    playerctl next && sleep 0.1s && refb
+
+super + shift + t; {t,s}
+    {tabbed -r 2 st -w '', tabbed surf -e}
+
+super + shift + p
+    imlib2_grab ~/Download/screenshot.png
+
+super + F2
+    i3lock -c 000000
+
+super + F1
+    bash ~/.scripts/dwmSelect.sh
