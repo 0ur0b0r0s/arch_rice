@@ -14,4 +14,5 @@ alias \
 	sp="sudo pacman" \
     yay="yaourt" \
     kdwm="killall dwm" \
-    vim="~/.scripts/nvr.sh" 
+    vim="nvim" \
+    f="~/.scripts/lss.sh" 
