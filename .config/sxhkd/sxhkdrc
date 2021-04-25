@@ -6,10 +6,6 @@ super + Return
 super + s 
     spotify
 
-#lauch psafe API
-super + p
-    bash ~/Tools/psafe/psafe.sh
-
 #choose keyboard layout
 super + control + k 
     bash ~/.scripts/keyboardSelect.sh
@@ -25,10 +21,6 @@ super + d
 super + shift + c
     clipmenu
 
-#check reups
-super + r 
-   ~/Tools/url_checker/url_check.sh
-
 # start qutebrowser
 super + q 
    qutebrowser
@@ -36,9 +28,6 @@ super + q
 #start google-chrome
 super + g 
    google-chrome-stable
-
-super + a 
-   ~/.scripts/dmenu_freenom.sh
 
 super + F11 
     amixer set Master 5%+ && refb

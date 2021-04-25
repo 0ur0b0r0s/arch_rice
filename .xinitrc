@@ -6,10 +6,9 @@ numlockx on &
 xset r rate 300 50
 xset -dpms
 xset s off
-bash ~/.scripts/keyboardDetection.sh
-#bash ~/Tools/searx-docker/start.sh &
+bash ~/.scripts/keyboardDetection.sh &
+bash ~/.scripts/screen_config.sh &
 sleep 0.1s && xmodmap ~/.Xmodmap &
-xrandr --output eDP-1 --primary --mode 1366x768 --pos 1920x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal &
 sleep 0.1s && feh --bg-fill .config/wall.png &
 
 while true; do
@@ -31,9 +30,9 @@ while true; do
     #    sleep 1s
     #fi
     if [ -z "$SONG" ];then
-        xsetroot -name " : $SSID $WIFI_SIGNAL | MEM: $MEM | : $VOLUME | : $DATE | [ $HOUR ] "
+        xsetroot -name " WIFI: $SSID $WIFI_SIGNAL | MEM: $MEM | VOL: $VOLUME | $DATE | [ $HOUR ] "
     else
-        xsetroot -name " : $SONG | : $SSID $WIFI_SIGNAL | MEM: $MEM | : $VOLUME | : $DATE | [ $HOUR ] "
+        xsetroot -name " WIFI: $SSID $WIFI_SIGNAL | MEM: $MEM | VOL: $VOLUME | $DATE | [ $HOUR ] "
     fi
 
 done &
