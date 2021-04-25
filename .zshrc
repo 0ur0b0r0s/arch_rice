@@ -20,16 +20,16 @@ zmodload zsh/complist && compinit
 #_comp_options+=(globdots)		# Include hidden files.
 
 # Use vim keys in tab complete menu:
-#bindkey -v
+bindkey -e
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey "^[[P" delete-char 
-#bindkey -M emacs '^P' history-substring-search-up
-#bindkey -M emacs '^N' history-substring-search-down
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
 bindkey "^I" expand-or-complete
 
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
@@ -62,7 +62,5 @@ fi
 
 feh --bg-fill .config/dwm/wall.jpg 2>/dev/null
 # Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/k/k.sh 2>/dev/null
-source /usr/share/zsh/plugins/ssh-connect/ssh-connect.sh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-history-substring-search.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting-filetypes.zsh 2>/dev/null
