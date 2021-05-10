@@ -5,7 +5,7 @@ alias \
     ll="ls -l" \
     lss="~/.scripts/lss.sh" \
     ..="cd .." \
-    ac="vim $0" \
+    ac="vim ~/.config/aliasrc && source ~/.config/aliasrc" \
     zc="vim ~/.zshrc" \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
@@ -15,4 +15,7 @@ alias \
     yay="yaourt" \
     kdwm="killall dwm" \
     vim="nvim" \
-    f="~/.scripts/lss.sh" 
+    f="~/.scripts/lss.sh" \
+    sshMap="bash ~/.scripts/compassoCodes/sshMap/sshMap.sh" \
+    dcon="docker container" \
+    zp="nvim ~/.zprofile && source ~/.zprofile"
