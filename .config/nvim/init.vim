@@ -1,25 +1,23 @@
 "NVIM CONFIGURATION FILE
 
-" Theme
-syntax enable
-set t_Co=256
-set termguicolors
-set background=dark
-colorscheme molokai
 
 call plug#begin('~/.config/nvim/bundle')
 
 " Plugins
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tomasr/molokai'
 Plug 'zchee/deoplete-jedi'
 Plug 'rbong/vim-crystalline'
 let g:airline_theme='dark'
 Plug 'vim-syntastic/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'joshdick/onedark.vim'
-Plug 'crusoexia/vim-dracula'
+Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
+
+" Theme
+syntax enable
+set t_Co=256
+set termguicolors
+set background=dark
+colorscheme palenight
 
 " basics
 filetype plugin indent on
