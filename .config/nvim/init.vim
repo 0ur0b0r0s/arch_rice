@@ -1,5 +1,12 @@
 "NVIM CONFIGURATION FILE
 
+" Theme
+syntax enable
+set t_Co=256
+set termguicolors
+set background=dark
+colorscheme molokai
+
 call plug#begin('~/.config/nvim/bundle')
 
 " Plugins
@@ -10,11 +17,8 @@ Plug 'rbong/vim-crystalline'
 let g:airline_theme='dark'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
-Plug 'yegappan/mru'
-Plug 'tpope/vim-surround'
+Plug 'crusoexia/vim-dracula'
 call plug#end()
 
 " basics
@@ -45,7 +49,6 @@ nnoremap <SPACE> <Nop>
 inoremap jk <ESC>
 nnoremap ; :
 nnoremap S :%s//g<Left><Left>
-nnoremap m1 :normal! d2jf:d$jdd<CR>
 nnoremap <leader>r :%s///g<Left><Left>
 nnoremap <leader>ba :bad 
 nnoremap <leader>bn :bNext<CR>
@@ -82,7 +85,6 @@ nnoremap <leader>vs8 :vsplit #8<CR>
 nnoremap <leader>vs9 :vsplit #9<CR>
 nnoremap <leader>sw :set wrap<CR>
 nnoremap <leader>nsw :set nowrap<CR>
-nnoremap <leader>f :FZF<CR>
 nnoremap <leader>tv :vne<CR>:terminal<CR>i
 nnoremap <leader>th :sp<CR>:terminal<CR>i
 tnoremap jk <C-\><C-n>
@@ -131,20 +133,9 @@ set pastetoggle=<F2>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-" use tab to forward cycle
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-" Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" Theme
-syntax enable
-set t_Co=256
-set termguicolors
-set background=dark
-"colorscheme darkblue
-colorscheme onedark
 
 function! StatusLine(...)
   return crystalline#mode() . crystalline#right_mode_sep('')
@@ -153,17 +144,10 @@ function! StatusLine(...)
 endfunction
 let g:crystalline_enable_sep = 1
 let g:crystalline_statusline_fn = 'StatusLine'
-let g:crystalline_theme = 'onedark'
+let g:crystalline_theme = 'dracula'
 set laststatus=2
 set tabline=%!crystalline#bufferline()
 set showtabline=2
 
 hi Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE guifg=white 
-
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
-  \   <bang>0)
