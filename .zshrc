@@ -6,6 +6,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
 CASE_SENSITIVE="false"
+local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
 setopt GLOB_COMPLETE
 
 autoload -U compinit
