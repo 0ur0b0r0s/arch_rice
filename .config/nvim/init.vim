@@ -10,6 +10,10 @@ Plug 'rbong/vim-crystalline'
 let g:airline_theme='dark'
 Plug 'vim-syntastic/syntastic'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'neomake/neomake'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 " Theme
@@ -86,6 +90,13 @@ nnoremap <leader>nsw :set nowrap<CR>
 nnoremap <leader>tv :vne<CR>:terminal<CR>i
 nnoremap <leader>th :sp<CR>:terminal<CR>i
 tnoremap jk <C-\><C-n>
+nmap <leader>g :Git<CR>
+nmap <leader>gc :Git commit<CR>
+nmap <leader>gP :Git push<CR>
+nmap <leader>gp :Git pull<CR>
+nmap <leader>gl :Git log<CR>
+nmap <leader>j <plug>(signify-next-hunk)
+nmap <leader>k <plug>(signify-prev-hunk)
 nmap <silent> <c-e><c-v> :tabnew ~/.config/nvim/init.vim<CR>
 nmap <silent> <c-s><c-x> :source ~/.config/nvim/init.vim<CR>
 nmap <silent> <c-p><c-i> :PlugInstall<CR>
@@ -135,6 +146,7 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" crystalline statusbar
 function! StatusLine(...)
   return crystalline#mode() . crystalline#right_mode_sep('')
         \ . ' %f%h%w%m%r ' . crystalline#right_sep('', 'Fill') . '%='
@@ -149,3 +161,25 @@ set showtabline=2
 
 hi Normal guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE guifg=white 
+
+" neomake config
+
+" When writing a buffer (no delay).
+call neomake#configure#automake('w')
+" When writing a buffer (no delay), and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 750)
+" When reading a buffer (after 1s), and when writing (no delay).
+call neomake#configure#automake('rw', 1000)
+" Full config: when writing or reading a buffer, and on changes in insert and
+" normal mode (after 500ms; no delay when writing).
+call neomake#configure#automake('nrwi', 500)
+
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+
+" clean all registrers
+let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+for r in regs
+  call setreg(r, [])
+endfor
