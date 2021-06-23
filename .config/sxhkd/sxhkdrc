@@ -1,57 +1,50 @@
-# start a terminal
 super + Return
         st 
 
-#launch spotify
 super + s 
     spotify
 
-#choose keyboard layout
 super + control + k 
-    bash ~/.scripts/keyboardSelect.sh
+    ~/.scripts/keyboardSelect.sh
 
-#choose screen layout
 super + control + s
-    bash ~/.scripts/screen.sh
+    ~/.scripts/screen.sh
 
-# start dmenu (a program launcher)
 super + d 
     dmenu_run
 
-super + shift + c
-    clipmenu
-
-# start qutebrowser
 super + q 
    qutebrowser
 
-#start google-chrome
 super + g 
    google-chrome-stable
 
-super + F11 
-    amixer set Master 5%+ && refb
+super + r
+   rocketchat-desktop
 
-super + F10 
-    amixer set Master 5%- && refb
+F1
+   ~/.scripts/dwmSelect.sh
 
-super + F6
-    playerctl previous && sleep 0.1s && refb
+F2
+   ~/.scripts/fixScreen.sh
 
-super + F7
-    playerctl {play,pause}
+F4
+   i3lock -c 000000
 
-super + F8
-    playerctl next && sleep 0.1s && refb
+F8
+   playerctl previous
 
-super + shift + t; {t,s}
-    {tabbed -r 2 st -w '', tabbed surf -e}
+F9
+   playerctl {play,pause}
+
+F10
+   playerctl next
+
+F11 
+   amixer set Master 5%-
+
+F12 
+   amixer set Master 5%+
 
 super + shift + p
-    imlib2_grab ~/Download/screenshot.png
-
-super + F2
-    i3lock -c 000000
-
-super + F1
-    bash ~/.scripts/dwmSelect.sh
+   imlib2_grab ~/Download/screenshot.png
