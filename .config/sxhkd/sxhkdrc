@@ -14,13 +14,16 @@ super + d
     dmenu_run
 
 super + q 
-   qutebrowser
+    qutebrowser
 
 super + g 
-   google-chrome-stable
+    google-chrome-stable
 
 super + r
-   rocketchat-desktop
+    rocketchat-desktop
+
+super + shift + b
+    bluetooth-autoconnect
 
 F1
    ~/.scripts/dwmSelect.sh
