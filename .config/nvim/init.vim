@@ -141,8 +141,8 @@ highlight LineNr guibg=NONE guifg=white
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-"" clean all registrers
-"let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
-"for r in regs
-"  call setreg(r, [])
-"endfor
+" clean all registrers
+let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+for r in regs
+  call setreg(r, [])
+endfor
