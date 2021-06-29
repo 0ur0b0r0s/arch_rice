@@ -14,6 +14,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " Theme
@@ -43,7 +46,6 @@ set backspace=2
 set expandtab
 set nobackup
 set noswapfile
-set emoji
 
 " preferences
 let mapleader = " "
@@ -51,53 +53,26 @@ nnoremap <SPACE> <Nop>
 inoremap jk <ESC>
 nnoremap ; :
 nnoremap S :%s//g<Left><Left>
-nnoremap <leader>r :%s///g<Left><Left>
-nnoremap <leader>ba :bad 
-nnoremap <leader>bn :bNext<CR>
-nnoremap <leader>bb :bprevious<CR>
-nnoremap <leader>bd :bd<CR>
-nnoremap <leader>bl :ls<CR>
 nnoremap <leader>gc :Commits<CR>
-nnoremap <leader>1 :b1<CR>
-nnoremap <leader>2 :b2<CR>
-nnoremap <leader>3 :b3<CR>
-nnoremap <leader>4 :b4<CR>
-nnoremap <leader>5 :b5<CR>
-nnoremap <leader>6 :b6<CR>
-nnoremap <leader>7 :b7<CR>
-nnoremap <leader>8 :b8<CR>
-nnoremap <leader>9 :b9<CR>
-nnoremap <leader>s1 :split #1<CR>
-nnoremap <leader>s2 :split #2<CR>
-nnoremap <leader>s3 :split #3<CR>
-nnoremap <leader>s4 :split #4<CR>
-nnoremap <leader>s5 :split #5<CR>
-nnoremap <leader>s6 :split #6<CR>
-nnoremap <leader>s7 :split #7<CR>
-nnoremap <leader>s8 :split #8<CR>
-nnoremap <leader>s9 :split #9<CR>
-nnoremap <leader>vs1 :vsplit #1<CR>
-nnoremap <leader>vs2 :vsplit #2<CR>
-nnoremap <leader>vs3 :vsplit #3<CR>
-nnoremap <leader>vs4 :vsplit #4<CR>
-nnoremap <leader>vs5 :vsplit #5<CR>
-nnoremap <leader>vs6 :vsplit #6<CR>
-nnoremap <leader>vs7 :vsplit #7<CR>
-nnoremap <leader>vs8 :vsplit #8<CR>
-nnoremap <leader>vs9 :vsplit #9<CR>
 nnoremap <leader>sw :set wrap<CR>
 nnoremap <leader>nsw :set nowrap<CR>
 nnoremap <leader>tv :vne<CR>:terminal<CR>i
 nnoremap <leader>th :sp<CR>:terminal<CR>i
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 tnoremap jk <C-\><C-n>
-nmap <leader>g :Git<CR>
-nmap <leader>gc :Git commit<CR>
+nmap <leader>gt :Git<CR>
+nmap <leader>gC :Git commit<CR>
 nmap <leader>gP :Git push<CR>
 nmap <leader>gp :Git pull<CR>
 nmap <leader>gl :Git log<CR>
+nmap <leader>gb :Git branch<CR>
+nmap <leader>gc :Git checkout
 nmap <leader>st :SignifyToggle<CR>
+nmap <leader>gv :GV<CR>
 nmap <leader>j <plug>(signify-next-hunk)
 nmap <leader>k <plug>(signify-prev-hunk)
+nmap <leader>tr :!tree<CR>
 nmap <silent> <c-e><c-v> :tabnew ~/.config/nvim/init.vim<CR>
 nmap <silent> <c-s><c-x> :source ~/.config/nvim/init.vim<CR>
 nmap <silent> <c-p><c-i> :PlugInstall<CR>
@@ -166,8 +141,8 @@ highlight LineNr guibg=NONE guifg=white
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-" clean all registrers
-let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
-for r in regs
-  call setreg(r, [])
-endfor
+"" clean all registrers
+"let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+"for r in regs
+"  call setreg(r, [])
+"endfor
