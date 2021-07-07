@@ -30,8 +30,6 @@ bindkey "^I" expand-or-complete
 echo -ne '\e[5 q' #Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} #Use beam shape cursor for each new prompt.
 
-bindkey -s '^o' 'lfcd\n'
-
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e^v' edit-command-line
 
