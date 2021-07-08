@@ -1,0 +1,5 @@
+require("plugins")
+require("keymappings")
+require("settings")
+require("lualine-conf")
+vim.cmd('source ./lua/completion-conf.vim')
