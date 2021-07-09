@@ -28,7 +28,6 @@ return require('packer').startup(function()
     use 'Yggdroot/indentLine'
     use 'tpope/vim-fugitive'
     use 'mhinz/vim-signify'
-    use 'neoclide/coc.nvim'
     use 'junegunn/gv.vim'
     use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-compe'
