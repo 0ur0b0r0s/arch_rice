@@ -22,6 +22,9 @@ super + q
 super + g 
    google-chrome-stable
 
+super + r
+    rocketchat-desktop
+
 F1
     bash ~/.scripts/dwmSelect.sh
 
