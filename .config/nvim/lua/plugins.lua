@@ -31,6 +31,10 @@ return require('packer').startup(function()
     use 'junegunn/gv.vim'
     use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-compe'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{ 'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim' }}
+    }
     vim.cmd('packadd nvim-lsp')
     vim.cmd('packadd nvim-lspconfig')
 end)
