@@ -76,5 +76,10 @@ vim.api.nvim_set_keymap("n", "<Leader>sc", ":mksession! ~/.config/nvim/sessions/
 vim.api.nvim_set_keymap("n", "<Leader>ss", ":bufdo bwipeout | source ~/.config/nvim/sessions/", { noremap = true })
 
 -- terraform
-vim.api.nvim_set_keymap("n", "<Leader>ti", ":!terraform init -no-color<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>tp", ":!terraform plan -no-color -out=last_plan.bin | tee last_plan.log<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ti", ":!source .env | terraform init -no-color<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>tp", ":!terraform plan -no-color -out=last_plan.bin > last_plan.log<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>op", ":vsplit last_plan.log<CR>", { noremap = true })
+
+-- telescope
+vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>fb", ":Telescope buffers<CR>", { noremap = true })
