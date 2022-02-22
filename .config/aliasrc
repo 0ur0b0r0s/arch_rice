@@ -7,15 +7,20 @@ alias \
     ..="cd .." \
     ac="vim ~/.config/aliasrc && source ~/.config/aliasrc" \
     zc="vim ~/.zshrc" \
-	ls="ls -hN --color=auto --group-directories-first" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	sdn="sudo shutdown -h now" \
-	sp="sudo pacman" \
+    ls="ls -hN --color=auto --group-directories-first" \
+    grep="grep --color=auto" \
+    diff="diff --color=auto" \
+    sdn="sudo shutdown -h now" \
+    sp="sudo pacman" \
     yay="yaourt" \
     kdwm="killall dwm" \
     vim="nvim" \
     f="~/.scripts/lss.sh" \
     sshMap="bash ~/.scripts/compassoCodes/sshMap/sshMap.sh" \
     dcon="docker container" \
-    zp="nvim ~/.zprofile && source ~/.zprofile"
+    zp="nvim ~/.zprofile && source ~/.zprofile" \
+    k="kubectl" \
+    kc="kubectx" \
+    kns="kubens" \
+    koff="kubeoff" \
+    kon="kubeon"
