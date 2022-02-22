@@ -1,7 +1,0 @@
-require("plugins")
-require("keymappings")
-require("settings")
-require("lualine-conf")
-require("compe-conf")
-require("lsp-config")
-require("telescope")
