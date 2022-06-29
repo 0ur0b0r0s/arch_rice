@@ -23,4 +23,6 @@ alias \
     kc="kubectx" \
     kns="kubens" \
     koff="kubeoff" \
-    kon="kubeon"
+    kon="kubeon" \
+    wp="watch kubectl get pods -o wide" \
+    stern="bash ~/.scripts/stern.sh"
