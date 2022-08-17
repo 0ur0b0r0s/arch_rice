@@ -38,10 +38,6 @@ bindkey '^e^v' edit-command-line
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export NVM_DIR="$HOME/.nvm"
-
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec startx
 fi
@@ -50,3 +46,5 @@ feh --bg-fill .config/dwm/wall.jpg 2>/dev/null
 source /usr/share/zsh/plugins/zsh-history-substring-search.zsh 2>/dev/null
 source /usr/share/zsh/plugins/kube-ps1.sh 2>/dev/null
 source ~/.zprofile 2>/dev/null
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
