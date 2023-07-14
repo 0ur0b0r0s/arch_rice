@@ -25,5 +25,6 @@ alias \
     koff="kubeoff" \
     kon="kubeon" \
     wp="watch kubectl get pods -o wide" \
+    wap="watch kubectl get pods -o wide -A" \
     stern="bash ~/.scripts/stern.sh" \
     sc="vim ~/.config/sxhkd/sxhkdrc"
