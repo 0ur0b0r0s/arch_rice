@@ -19,12 +19,14 @@ while true; do
     WIFI_SIGNAL=$(cat /proc/net/wireless | awk 'NR==3 { print $4 }' | sed 's/\.//')
     SSID=$(iwgetid | cut -d ':' -f2 | sed "s/\"//g")
     VOLUME=$(amixer get Master | awk 'NR==5 { print $4 }' | sed 's/\[//;s/\]//')
-    BATT=$(acpi | awk '{ print $NF }')
+    BATT=$(acpi | awk '{ print $4 }' | sed 's/,//g' )
 
     if [[ $SPOTIFY_SONG =~ "Ad" ]];then
         xsetroot -name " WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT | $DATE | [ $HOUR ] "
+        sleep 1
     else 
         xsetroot -name " SPOTIFY: $SPOTIFY_SONG | WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT | $DATE | [ $HOUR ] "
+        sleep 1
     fi
 
 done &
