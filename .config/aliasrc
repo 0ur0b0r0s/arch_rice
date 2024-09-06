@@ -2,22 +2,15 @@
 
 alias \
     l="ls -la" \
-    ll="ls -l" \
-    lss="~/.scripts/lss.sh" \
+    ll="ls -l" \ lss="~/.scripts/lss.sh" \
     ..="cd .." \
     ac="vim ~/.config/aliasrc && source ~/.config/aliasrc" \
     zc="vim ~/.zshrc" \
     ls="ls -hN --color=auto --group-directories-first" \
     grep="grep --color=auto" \
     diff="diff --color=auto" \
-    sdn="sudo shutdown -h now" \
     sp="sudo pacman" \
-    yay="yaourt" \
-    kdwm="killall dwm" \
     vim="nvim" \
-    f="~/.scripts/lss.sh" \
-    sshMap="bash ~/.scripts/compassoCodes/sshMap/sshMap.sh" \
-    dcon="docker container" \
     zp="nvim ~/.zprofile && source ~/.zprofile" \
     k="kubectl" \
     kc="kubectx" \
@@ -26,5 +19,6 @@ alias \
     kon="kubeon" \
     wp="watch kubectl get pods -o wide" \
     wap="watch kubectl get pods -o wide -A" \
-    stern="bash ~/.scripts/stern.sh" \
-    sc="vim ~/.config/sxhkd/sxhkdrc"
+    stern="bash ~/.scripts/quick-scripts/stern.sh" \
+    sc="vim ~/.config/sxhkd/sxhkdrc" \
+    nvpn="sudo openvpn --config /home/kr4k3n/Neogrid/terraform/iac-shared-openvpn-scripts/huawei-oem-tcp.ovpn" \

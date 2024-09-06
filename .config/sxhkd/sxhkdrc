@@ -1,11 +1,11 @@
 super + Return
-        st 
+        st
 
 super + s 
     spotify
 
 super + control + k 
-    bash ~/.scripts/keyboardSelect.sh
+    bash ~/.scripts/quick-scripts/keyboardSelect.sh
 
 super + control + s
     bash ~/.scripts/screen.sh
@@ -22,22 +22,22 @@ super + q
 super + g 
    google-chrome-stable
 
-super + r
-    rocketchat-desktop
+super + n
+    obsidian
 
 F1
-    bash ~/.scripts/dwmSelect.sh
+    bash ~/.scripts/quick-scripts/dwmSelect.sh
 
 F2
     i3lock -c 000000
 
-F8
+F7
     playerctl previous
 
-F9
+F8
     playerctl --player=spotify {play,pause}
 
-F10
+F9
     playerctl next
 
 F11 

@@ -2,11 +2,12 @@
 
 sxhkd &
 picom &
+blueman-applet &
 numlockx on &
 xset r rate 300 50
 xset -dpms
 xset s off
-dash ~/.scripts/keyboardDetection.sh &
+dash ~/.scripts/quick-scripts/keyboardDetection.sh &
 sleep 0.1s && feh --bg-fill ~/.config/wall.png &
 while true; do
     SPOTIFY_SONG=$(spotify-now -i "%artist - %title")
@@ -19,13 +20,17 @@ while true; do
     WIFI_SIGNAL=$(cat /proc/net/wireless | awk 'NR==3 { print $4 }' | sed 's/\.//')
     SSID=$(iwgetid | cut -d ':' -f2 | sed "s/\"//g")
     VOLUME=$(amixer get Master | awk 'NR==5 { print $4 }' | sed 's/\[//;s/\]//')
-    BATT=$(acpi | awk '{ print $4 }' | sed 's/,//g' )
+    BATT_INFO=$(acpi)
+    BATT_PERCENTAGE=$(echo $BATT_INFO | awk '{ print $4 }' | sed 's/,//g' )
 
     if [[ $SPOTIFY_SONG =~ "Ad" ]];then
-        xsetroot -name " WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT | $DATE | [ $HOUR ] "
+        xsetroot -name " WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT_PERCENTAGE | $DATE | [ $HOUR ] "
+        sleep 1
+    elif [[ $BATT_PERCENTAGE =~ "100%" ]];then
+        xsetroot -name " WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT_PERCENTAGE [charged] | $DATE | [ $HOUR ] "
         sleep 1
     else 
-        xsetroot -name " SPOTIFY: $SPOTIFY_SONG | WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT | $DATE | [ $HOUR ] "
+        xsetroot -name " SPOTIFY: $SPOTIFY_SONG | WIFI: $SSID $WIFI_SIGNAL | CPU: $CPU | MEM_FREE: $MEM | VOL: $VOLUME | BATT: $BATT_PERCENTAGE | $DATE | [ $HOUR ] "
         sleep 1
     fi
 
